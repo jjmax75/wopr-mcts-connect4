@@ -1,0 +1,21 @@
+{
+  "name": "node-wopr",
+  "version": "1.0.0",
+  "description": "based on Michael Liu's work - https://medium.com/@quasimik/monte-carlo-tree-search-applied-to-letterpress-34f41c86e238 and https://medium.com/@quasimik/implementing-monte-carlo-tree-search-in-node-js-5f07595104df",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Behan <behanj@gmail.com>",
+  "contributors": [
+    "Michael Liu <> (https://medium.com/@quasimik)"
+  ],
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1"
+  }
+}
