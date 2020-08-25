@@ -1,6 +1,6 @@
 'use strict';
 
-const Game = require('./game');
+const Game = require('./game-c4');
 const MonteCarlo = require('./monte-carlo');
 
 const game = new Game();

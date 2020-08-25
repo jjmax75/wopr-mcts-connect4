@@ -29,8 +29,7 @@ class MonteCarlo {
    */
   runSearch (state, count = 1000) { // todo - do as atimed loop and count the iterations
     this.makeNode(state);
-
-    for (const i = 1; i <= 1000; i++) {
+    for (let i = 1; i <= 1000; i++) {
       let node = this.select(state);
       let winner = this.game.winner(node.state);
 

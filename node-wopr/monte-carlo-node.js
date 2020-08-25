@@ -28,7 +28,7 @@ class MonteCarloNode {
    * @return {MonteCarloNode} - the child node corresponding to the play
    */
   childNode (play) {
-    const child = this.children.get(play.hash);
+    const child = this.children.get(play.hash());
 
     if (child === undefined) {
       throw new Error('No such play');
@@ -63,7 +63,7 @@ class MonteCarloNode {
    */
   allPlays () {
     const plays = [];
-    for (const child of this.children.values) {
+    for (const child of this.children.values()) {
       plays.push(child.play);
     }
     return plays;
@@ -89,7 +89,7 @@ class MonteCarloNode {
    */
   isFullyExpanded () {
     for (const child of this.children.values()) {
-      if (child.node === false) {
+      if (child.node === null) {
         return false;
       }
     }
