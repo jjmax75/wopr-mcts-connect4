@@ -2,7 +2,7 @@
 
 const Game = require('./game-c4.js');
 
-const N_GAMES = 1000;
+const N_GAMES = 10000;
 
 const game = new Game();
 

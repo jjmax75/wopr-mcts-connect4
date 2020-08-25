@@ -135,6 +135,37 @@ class MonteCarlo {
       node = node.parent;
     }
   }
+
+  getStats (state) {
+    const node = this.nodes.get(state.hash());
+    // eslint-disable-next-line camelcase
+    const { n_plays, n_wins } = node;
+    const stats = {
+      n_plays,
+      n_wins,
+      children: [],
+    };
+
+    for (const child of node.children.values()) {
+      const { node, play } = child;
+      if (node === null) {
+        stats.children.push({
+          play,
+          n_plays: null,
+          n_wins: null,
+        });
+      } else {
+        // eslint-disable-next-line camelcase
+        const { n_plays, n_wins } = node;
+        stats.children.push({
+          play,
+          n_plays,
+          n_wins,
+        });
+      }
+    }
+    return stats;
+  }
 }
 
 module.exports = MonteCarlo;
