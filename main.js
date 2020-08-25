@@ -1,8 +1,8 @@
 'use strict';
 
 const util = require('util');
-const Game = require('./game-c4');
-const MonteCarlo = require('./monte-carlo');
+const Game = require('./game-engine/game-c4');
+const MonteCarlo = require('./node-wopr/monte-carlo');
 
 const game = new Game();
 const mcts = new MonteCarlo(game);

@@ -1,5 +1,5 @@
 {
-  "name": "node-wopr",
+  "name": "connect-four-mcts",
   "version": "1.0.0",
   "description": "based on Michael Liu's work - https://medium.com/@quasimik/monte-carlo-tree-search-applied-to-letterpress-34f41c86e238 and https://medium.com/@quasimik/implementing-monte-carlo-tree-search-in-node-js-5f07595104df",
   "main": "main.js",
