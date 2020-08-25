@@ -1,0 +1,13 @@
+/Users/john/dev/games/connect-four/rust-wopr/target/debug/deps/libc-932d01d8c01add63.rmeta: /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/lib.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/macros.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/fixed_width_ints.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/b64/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/b64/align.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/align.rs
+
+/Users/john/dev/games/connect-four/rust-wopr/target/debug/deps/libc-932d01d8c01add63.d: /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/lib.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/macros.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/fixed_width_ints.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/b64/mod.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/b64/align.rs /Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/align.rs
+
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/lib.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/macros.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/fixed_width_ints.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/mod.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/mod.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/mod.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/b64/mod.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/bsd/apple/b64/align.rs:
+/Users/john/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.76/src/unix/align.rs:
