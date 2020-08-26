@@ -19,6 +19,7 @@
     "eslint-plugin-promise": "^4.2.1"
   },
   "dependencies": {
-    "@saleae/ffi": "^3.0.2"
+    "@saleae/ffi": "^3.0.2",
+    "yargs": "^15.4.1"
   }
 }
