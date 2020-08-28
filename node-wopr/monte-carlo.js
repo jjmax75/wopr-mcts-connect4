@@ -9,7 +9,7 @@ class MonteCarlo {
   constructor (game, UCB1ExploreParam = 2) {
     this.game = game;
     this.UCB1ExploreParam = UCB1ExploreParam;
-    this.nodes = new Map(); // map: State.hash() => MonteCarloNode
+    this.nodes = {}; // State.hash() => MonteCarloNode
   }
 
   /**
@@ -17,10 +17,10 @@ class MonteCarlo {
    */
   makeNode (state) {
     const stateHash = state.hash();
-    if (!this.nodes.has(stateHash)) {
+    if (!this.nodes[stateHash]) {
       const unexpandedPlays = this.game.legalPlays(state).slice();
       const node = new MonteCarloNode(null, null, state, unexpandedPlays);
-      this.nodes.set(stateHash, node);
+      this.nodes[stateHash] = node;
     }
   }
 
@@ -29,7 +29,7 @@ class MonteCarlo {
    */
   runSearch (state, count = 1000) { // todo - do as atimed loop and count the iterations
     this.makeNode(state);
-    for (let i = 1; i <= 1000; i++) {
+    for (let i = 1; i <= count; i++) {
       let node = this.select(state);
       let winner = this.game.winner(node.state);
 
@@ -47,11 +47,11 @@ class MonteCarlo {
   bestPlay (state) {
     this.makeNode(state);
 
-    if (!this.nodes.get(state.hash()).isFullyExpanded()) {
-      throw new Error('not enoguh information');
+    if (!this.nodes[state.hash()].isFullyExpanded()) {
+      throw new Error('not enough information');
     }
 
-    const node = this.nodes.get(state.hash());
+    const node = this.nodes[state.hash()];
     const allPlays = node.allPlays();
     let bestPlay;
     let max = -Infinity;
@@ -71,7 +71,7 @@ class MonteCarlo {
    * @return {MonteCarloNode} return the node that is either
    */
   select (state) {
-    let node = this.nodes.get(state.hash());
+    let node = this.nodes[state.hash()];
 
     while (node.isFullyExpanded() && !node.isLeaf()) {
       const plays = node.allPlays();
@@ -101,7 +101,7 @@ class MonteCarlo {
     const childState = this.game.nextState(node.state, play);
     const childUnexpandedPlays = this.game.legalPlays(childState);
     const childNode = node.expand(play, childState, childUnexpandedPlays);
-    this.nodes.set(childState.hash(), childNode);
+    this.nodes[childState.hash()] = childNode;
 
     return childNode;
   }
@@ -137,7 +137,7 @@ class MonteCarlo {
   }
 
   getStats (state) {
-    const node = this.nodes.get(state.hash());
+    const node = this.nodes[state.hash()];
     // eslint-disable-next-line camelcase
     const { n_plays, n_wins } = node;
     const stats = {

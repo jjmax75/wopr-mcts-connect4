@@ -1,37 +1,32 @@
 extern crate neon;
 extern crate neon_serde;
-#[macro_use]
-extern crate serde_derive;
 
 use neon::prelude::*;
 
 mod helpers;
 use helpers::State;
 
-// fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
-//     Ok(cx.string("hello node"))
-// }
-fn run_search(mut cx: FunctionContext)-> JsResult<JsUndefined> {
-  println!("Running the search so I am");
-  Ok(cx.undefined())
+fn run_search(mut cx: FunctionContext) -> JsResult<JsString> {
+  let state_raw = cx.argument::<JsValue>(0)?;
+  let state: State = neon_serde::from_value(&mut cx, state_raw)?;
+  let count = cx.argument::<JsNumber>(1)?.value();
+  let nodes_handle: Handle<JsObject> = cx.argument::<JsObject>(2)?;
+
+  let state_hash = State::hash(state.playHistory);
+  let key = state_hash.as_str();
+
+  let node = nodes_handle.get(&mut cx, key)?;
+  // let node = select(&state_hash);
+
+  // for x in 0..count as i32 {
+  //   println!("{} - {:?}", x, state.playHistory);
+  // }
+
+  Ok(cx.string(state_hash))
 }
 
-fn get_stats(mut cx: FunctionContext)-> JsResult<JsUndefined> {
-  println!("Getting the games stats");
-  Ok(cx.undefined())
-}
-
-fn best_play(mut cx: FunctionContext)-> JsResult<JsUndefined> {
-  println!("Getting the best play");
-  Ok(cx.undefined())
-}
-
-fn select(mut cx: FunctionContext) -> JsResult<JsUndefined> {
-  let x = cx.argument::<JsValue>(0)?;
-  let x_value: State = neon_serde::from_value(&mut cx, x)?;
-  println!("player {}", x_value.player);
-  Ok(cx.undefined())
-  // let node = this.nodes.get(state.hash());
+fn select(state_hash: &str) {
+  // let node = nodes[state_hash];
 
   // while (node.isFullyExpanded() && !node.isLeaf()) {
   //   const plays = node.allPlays();
@@ -51,8 +46,5 @@ fn select(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 }
 
 register_module!(mut m, {
-    m.export_function("runSearch", run_search);
-    m.export_function("getStats", get_stats);
-    m.export_function("bestPlay", best_play);
-    m.export_function("select", select)
+    m.export_function("runSearch", run_search)
 });

@@ -27,6 +27,7 @@ const neonRunner = function () {
 //     const play = mcts.bestPlay(state);
 //     console.log(`chosen play: ${util.inspect(play, { showHidden: false, depth: null })}`);
 // 
+// ***** everything above this line gets moved to rust 
 //     state = game.nextState(state, play);
 //     winner = game.winner(state);
 //   }
